@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dockerapi</name>
+    </assembly>
+    <members>
+        <member name="T:keyapi.Controllers.KeyController">
+            <summary>
+            Api Key Controller
+            </summary>
+        </member>
+        <member name="M:keyapi.Controllers.KeyController.#ctor(keyapi.Repositories.IKeyRepository)">
+            <summary>Initializes a new instance of the <see cref="T:keyapi.Controllers.KeyController" /> class.</summary>
+            <param name="repository">The key repository.</param>
+        </member>
+        <member name="M:keyapi.Controllers.KeyController.Get(System.String)">
+             <summary>
+             This method shows all keys
+             </summary>
+             <param name="vendor">The vendor for the API Key</param>
+             <returns></returns>
+            <remarks>
+             Sample request
+             GET/Key/Vendor
+             </remarks>
+        </member>
+        <member name="M:keyapi.Controllers.KeyController.GetById(System.Int32)">
+             <summary>
+             This method shows all keys by Id
+             </summary>
+             <param name="id">The id for the API Key</param>
+             <returns></returns>
+            <remarks>
+             Sample request
+             GET/Key/Id
+             </remarks>
+        </member>
+        <member name="M:keyapi.Controllers.KeyController.CreateApiKey(System.String,System.Nullable{System.Guid})">
+            <summary>Creates a new API key.</summary>
+            <param name="vendor">The vendor.</param>
+            <param name="apiKey">The API key.</param>
+            <returns>created api key</returns>
+        </member>
+        <member name="M:keyapi.Controllers.KeyController.DeleteById(System.Int32)">
+             <summary>
+             This method deletes a key by id
+             </summary>
+             <param name="id">The id for the API Key</param>
+             <returns></returns>
+            <remarks>
+             Sample request
+             GET/Key/Id
+             </remarks>
+        </member>
+        <member name="T:keyapi.Maps.ApiKeyMap">
+            <summary>Api Key Mapper</summary>
+        </member>
+        <member name="M:keyapi.Maps.ApiKeyMap.#ctor(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{keyapi.Models.ApiKey})">
+            <summary>Initializes a new instance of the <see cref="T:keyapi.Maps.ApiKeyMap" /> class.</summary>
+            <param name="entityBuilder">The entity builder.</param>
+        </member>
+        <member name="T:keyapi.Models.ApiKeyDbContext">
+            <summary>Api Key Database Context</summary>
+        </member>
+        <member name="T:keyapi.Models.ApiKey">
+            <summary>Api Key</summary>
+        </member>
+        <member name="P:keyapi.Models.ApiKey.Id">
+            <summary>Gets or sets the identifier.</summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:keyapi.Models.ApiKey.Key">
+            <summary>Gets or sets the key.</summary>
+            <value>The key.</value>
+        </member>
+        <member name="P:keyapi.Models.ApiKey.Vendor">
+            <summary>Gets or sets the vendor.</summary>
+            <value>The vendor.</value>
+        </member>
+        <member name="P:keyapi.Models.ApiKey.RequestCount">
+            <summary>Gets or sets the request count.</summary>
+            <value>The request count.</value>
+        </member>
+        <member name="P:keyapi.Models.ApiKey.CreatedAt">
+            <summary>Gets or sets the created at timestamp.</summary>
+            <value>The created at timestamp.</value>
+        </member>
+        <member name="M:keyapi.Models.ApiKey.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:keyapi.Models.ApiKey" /> class.</summary>
+        </member>
+        <member name="M:keyapi.Models.ApiKey.#ctor(System.String,System.Nullable{System.Guid})">
+            <summary>Initializes a new instance of the <see cref="T:keyapi.Models.ApiKey" /> class.</summary>
+            <param name="vendor">The vendor.</param>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:keyapi.Repositories.KeyRepository.#ctor(keyapi.Models.ApiKeyDbContext)">
+            <summary>Initializes a new instance of the <see cref="T:keyapi.Repositories.KeyRepository" /> class.</summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="M:keyapi.Repositories.KeyRepository.GetAsync(System.String)">
+            <summary>
+            Get All Keys
+            </summary>
+            <param name="vendor">The vendor for the API Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:keyapi.Repositories.KeyRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Gets a key by Id
+            </summary>
+            <param name="id">The id for the API Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:keyapi.Repositories.KeyRepository.StoreApiKeyAsync(System.String,System.Nullable{System.Guid})">
+            <summary>Creates a new API key.</summary>
+            <param name="vendor">The vendor.</param>
+            <param name="apiKey">The API key.</param>
+            <returns>created api key</returns>
+        </member>
+        <member name="M:keyapi.Repositories.KeyRepository.DeleteByIdAsync(System.Int32)">
+            <summary>
+            Deletes a key by id
+            </summary>
+            <param name="id">The id for the API Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:keyapi.Repositories.IKeyRepository.GetAsync(System.String)">
+            <summary>
+            Get All Keys
+            </summary>
+            <param name="vendor">The vendor for the API Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:keyapi.Repositories.IKeyRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Gets a key by Id
+            </summary>
+            <param name="id">The id for the API Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:keyapi.Repositories.IKeyRepository.StoreApiKeyAsync(System.String,System.Nullable{System.Guid})">
+            <summary>Creates a new API key.</summary>
+            <param name="vendor">The vendor.</param>
+            <param name="apiKey">The API key.</param>
+            <returns>created api key</returns>
+        </member>
+        <member name="M:keyapi.Repositories.IKeyRepository.DeleteByIdAsync(System.Int32)">
+            <summary>
+            Deletes a key by id
+            </summary>
+            <param name="id">The id for the API Key</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
